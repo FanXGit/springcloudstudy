@@ -1,7 +1,7 @@
 package com.fzx.study.springcloud.controller;
 
-import com.fzx.study.springcloud.entities.Dept;
 import com.fzx.study.springcloud.service.DeptService;
+import com.fzx.study.springcloud.entities.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;

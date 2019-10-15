@@ -9,11 +9,23 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>springcloudstudy-api</module>
-        <module>springcloudstudy-provider-dept-8001</module>
         <module>springcloudstudy-consumer-dept-80</module>
+        <module>springcloudstudy-consumer-dept-feign</module>
+        <module>springcloudstudy-consumer-hystrix-dashboard</module>
+        <module>springcloudstudy-zuul-gateway-9527</module>
+        <module>springcloudstudy-config-3344</module>
+        <module>springcloudstudy-config-client-3355</module>
+        <module>springcloudstudy-eureka-7001</module>
+        <module>springcloudstudy-eureka-7002</module>
+        <module>springcloudstudy-eureka-7003</module>
+        <module>springcloudstudy-provider-config-dept-8001</module>
+        <module>springcloudstudy-provider-dept-8001</module>
+        <module>springcloudstudy-provider-dept-8002</module>
+        <module>springcloudstudy-provider-dept-8003</module>
         <module>dubbostudy-gmall-interface</module>
         <module>dubbostudy-order-service-consumer</module>
         <module>dubbostudy-user-service-provider</module>
+        <module>springcloudstudy-eureka-config-7001</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -35,10 +47,26 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.cloud</groupId>-->
+            <!--                <artifactId>spring-cloud-dependencies</artifactId>-->
+            <!--                <version>Finchley.SR1</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.boot</groupId>-->
+            <!--                <artifactId>spring-boot-dependencies</artifactId>-->
+            <!--                <version>2.0.3.RELEASE</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.3.RELEASE</version>
+                <version>1.5.9.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -75,4 +103,26 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+
+    <build>
+        <finalName>springcloudstudy</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
